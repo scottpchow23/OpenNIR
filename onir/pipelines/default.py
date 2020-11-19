@@ -11,8 +11,8 @@ class DefaultPipeline(pipelines.BasePipeline):
     @staticmethod
     def default_config():
         return {
-            'max_epoch': 2000,
-            'early_stop': 1000,
+            'max_epoch': 1000,
+            'early_stop': 20,
             'warmup': -1,
             'val_metric': 'map',
             'purge_weights': True,

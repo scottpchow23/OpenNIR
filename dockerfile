@@ -2,7 +2,7 @@
 FROM tensorflow/tensorflow:2.2.1-gpu-py3
 
 # Create workspace folder and set it as working directory
-WORKDIR /workspace
+WORKDIR /home/schow/OpenNIR
 
 # Copy openNIR files into the container
 COPY . .
@@ -18,6 +18,8 @@ RUN apt-get install openjdk-11-jdk -y
 
 # Install python dependencies
 RUN pip install -r requirements.txt
+
+ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64/
 
 # Drop you into a bash shell
 CMD ["/bin/bash"]
