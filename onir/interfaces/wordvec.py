@@ -28,7 +28,7 @@ def zip_handler(url, ext='', expected_md5=None):
             with logger.duration(f'loading vecs into memory'):
                 terms = []
                 weights = []
-                with open(out_file_name, 'rt') as f:
+                with open(out_file_name, 'rt', encoding='utf-8') as f:
                     for line in f:
                         cols = line.split()
                         if len(cols) == 2:
